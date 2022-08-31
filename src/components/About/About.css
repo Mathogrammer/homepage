@@ -1,0 +1,67 @@
+.about {
+  flex-direction: column;
+  margin-top: 3em;
+}
+
+.about__header > img {
+  margin-right: 10px;
+}
+
+.about__header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.about__name {
+  color: var(--clr-primary);
+}
+
+.about__role {
+  margin-top: 1.2em;
+}
+
+.about__desc {
+  font-size: 1rem;
+  max-width: 600px;
+}
+
+.about__desc {
+  margin-top: 2.4em;
+}
+
+.about__social {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about .link--icon {
+  margin-right: 0.8em;
+}
+
+.about .btn--outline {
+  margin-right: 1em;
+}
+
+@media (max-width: 450px) {
+  .app .about {
+    align-items: flex-start;
+    margin-top: 2em;
+  }
+
+  .about__header {
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+  }
+  
+  .about__header > img {
+    margin-bottom: 10px;
+  }
+
+  .about__header > h1 {
+    width: min-content;
+    justify-content: center;
+  }
+}
