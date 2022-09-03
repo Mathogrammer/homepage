@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "next build",
+    "build": "cross-env NEXT_PUBLIC_NODE_ENV=production next build",
     "lint": "next lint --fix .",
     "extract": "cross-env NODE_ENV=development lingui extract",
     "compile": "lingui compile"
