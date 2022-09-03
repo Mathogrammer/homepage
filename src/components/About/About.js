@@ -4,6 +4,7 @@ import MailIcon from '@mui/icons-material/Mail'
 import Image from 'next/image'
 import styles from './About.module.css'
 import photo from '../../../public/profile/profilePicRounded.png';
+import { t, Trans } from "@lingui/macro"
 
 const About = ({
     about: { name, role, description, resume, social },
@@ -12,25 +13,25 @@ const About = ({
         <div className={styles.about__header}>
             {photo && (
                 <div className={styles.about__image}>
-                    <Image width='200px' height='200px' alt='Avatar placeholder' src={photo} placeholder='blur' />
+                    <Image width='200px' height='200px' alt={t`Avatar placeholder`} src={photo} placeholder='blur' />
                 </div>
             )}
 
             <div>
                 {name && (
-                    <h1>
-            Hi, I&apos;m
+                    <h1><Trans>
+                        Hi, I&apos;m
                         <br />
                         <span className={styles.about__name}>{name}.</span>
-                    </h1>
+                    </Trans></h1>
                 )}
 
                 <div className='center'>
                     {resume && (
                         <a href={resume}>
-                            <span type='button' className='btn btn--outline'>
-                Curriculum Vitae [DE]
-                            </span>
+                            <span type='button' className='btn btn--outline'><Trans>
+                                Curriculum Vitae [DE]
+                            </Trans></span>
                         </a>
                     )}
 
@@ -44,7 +45,7 @@ const About = ({
                                 >
                                     <div className={styles.about__social}>
                                         <GitHubIcon />
-                    GitHub
+                                        GitHub
                                     </div>
                                 </a>
                             )}
@@ -57,7 +58,7 @@ const About = ({
                                 >
                                     <div className={styles.about__social}>
                                         <LinkedInIcon />
-                    LinkedIn
+                                        LinkedIn
                                     </div>
                                 </a>
                             )}
@@ -70,7 +71,9 @@ const About = ({
                                 >
                                     <div className={styles.about__social}>
                                         <MailIcon />
-                    Mail
+                                        <Trans>
+                                            Mail
+                                        </Trans>
                                     </div>
                                 </a>
                             )}
@@ -80,9 +83,9 @@ const About = ({
             </div>
         </div>
 
-        {role && <h2 className={styles.about__role}>A {role}.</h2>}
+        {role && <h2 className={styles.about__role}><Trans>A {role}.</Trans></h2>}
 
-        <p className={styles.about__desc}>{description && description}</p>
+        <p className={styles.about__desc}>{description ?? ''}</p>
     </div>
 )
 

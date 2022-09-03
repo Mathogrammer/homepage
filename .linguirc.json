@@ -1,0 +1,13 @@
+{
+    "locales": ["en", "de", "pseudo"],
+    "pseudoLocale": "pseudo",
+    "sourceLocale": "en",
+    "fallbackLocales": {
+      "default": "de"
+    },
+    "catalogs": [{
+       "path": "src/locales/{locale}/messages",
+       "include": ["src", "pages"]
+    }],
+    "format": "po"
+ }

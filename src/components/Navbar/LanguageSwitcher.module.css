@@ -1,0 +1,31 @@
+.switcherItem {
+    display: flex;
+    justify-content: space-between;
+}
+
+.justify {
+    position: absolute;
+    right: 0;
+    margin: auto 0;
+    height: fit-content;
+    top: 0;
+    bottom: 0;
+}
+
+.wrapper {
+    position: relative;
+}
+
+.select {
+    color: var(--clr-fg)
+}
+
+.select::before {
+    border-color: var(--clr-primary);
+    border-bottom: 1px solid var(--clr-primary);
+}
+
+.select::after {
+    border-color: var(--clr-primary);
+    border-bottom: 2px solid var(--clr-primary);
+}

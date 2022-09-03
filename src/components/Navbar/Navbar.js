@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { Trans } from "@lingui/macro";
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 import Switch from '@mui/material/Switch';
-import MenuIcon from '@mui/icons-material/Menu'
-import CloseIcon from '@mui/icons-material/Close'
-import { useThemeContext } from '../../contexts/theme'
-import styles from './Navbar.module.css'
+import { useState } from 'react';
+import { useThemeContext } from '../../contexts/theme';
+import LanguageSwitcher from "./LanguageSwitcher";
+import styles from './Navbar.module.css';
 
 const Navbar = ({ projects, skills, contact }) => {
     const [{ toggleTheme }] = useThemeContext()
@@ -24,7 +26,9 @@ const Navbar = ({ projects, skills, contact }) => {
                             onClick={toggleNavList}
                             className='link link--nav'
                         >
-              Projects
+                            <Trans>
+                                Projects
+                            </Trans>
                         </a>
                     </li>
                 ) : null}
@@ -36,7 +40,9 @@ const Navbar = ({ projects, skills, contact }) => {
                             onClick={toggleNavList}
                             className='link link--nav'
                         >
-              Skills
+                            <Trans>
+                                Skills
+                            </Trans>
                         </a>
                     </li>
                 ) : null}
@@ -48,7 +54,9 @@ const Navbar = ({ projects, skills, contact }) => {
                             onClick={toggleNavList}
                             className='link link--nav'
                         >
-              Contact
+                            <Trans>
+                                Contact
+                            </Trans>
                         </a>
                     </li>
                 ) : null}
@@ -101,6 +109,9 @@ const Navbar = ({ projects, skills, contact }) => {
                     },
                 }}
             />
+
+            <LanguageSwitcher />
+            
 
             <button
                 type='button'

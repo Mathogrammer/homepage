@@ -1,7 +1,13 @@
+// import { useMemo } from 'react'
 import uniqid from 'uniqid'
 import styles from './Skills.module.css'
 
 const Skills = ({ skills }) => {
+
+    // const skillCategories = useMemo(() => {
+    //     skills.map
+    // }, [skills]);
+
     if (!skills) return null
 
     return (

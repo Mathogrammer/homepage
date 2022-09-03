@@ -10,8 +10,6 @@ import Footer from '../src/components/Footer/Footer'
 import styles from '../src/app.module.css'
 import ReactDOMServer from 'react-dom/server'
 
-import * as portfolio from '../src/portfolio'
-
 const App = ({ header, about, projects, skills, contact }) => {
     const [{ themeName }] = useThemeContext()
 
@@ -42,7 +40,17 @@ const App = ({ header, about, projects, skills, contact }) => {
     )
 }
 
-export async function getStaticProps() {
+export async function getStaticProps(context) {
+    const locale = context.locale;
+    let data;
+    if (process.env.NODE_ENV === 'production')
+        data = await import(`../src/locales/${locale}/messages`);
+    else
+        data = await import(`@lingui/loader!../src/locales/${locale}/messages.po`);
+
+    const portfolioLocale = locale === 'pseudo' ? 'en' : locale;
+    const portfolio = await import(`../src/locales/${portfolioLocale}/portfolio`);
+
     const projects = portfolio.projects.map(project => ({
         ...project,
         description: ReactDOMServer.renderToStaticMarkup(project.description),
@@ -51,7 +59,8 @@ export async function getStaticProps() {
     return {
         props: {
             ...portfolio,
-            projects
+            projects,
+            translation: data.messages
         },
     }
 }
