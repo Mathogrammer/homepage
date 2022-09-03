@@ -36,10 +36,10 @@ export default function MyApp({ Component, pageProps }) {
     }, [locale, pageProps.translation])
 
     return (
-        <I18nProvider i18n={i18n}>
-            <ThemeProvider>
+        <ThemeProvider>
+            <I18nProvider i18n={i18n}>
                 <Component {...pageProps} />
-            </ThemeProvider>
-        </I18nProvider>
+            </I18nProvider>
+        </ThemeProvider>
     )
 }
