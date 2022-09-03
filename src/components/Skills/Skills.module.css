@@ -7,16 +7,16 @@
   justify-content: center;
 }
 
-.skills__list-item {
+.skills__list_item {
   margin: 0.5em;
 }
 
-.skills__list-item i {
+.skills__list_item i {
   margin: 0 0.2em;
   color: var(--clr-primary);
 }
 
-.category__title {
+.skills__category__title {
   text-align: center;
   margin-top: 1em;
   text-transform: uppercase;

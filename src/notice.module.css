@@ -1,0 +1,23 @@
+.root {
+  --font: Poppins, Helvetica, Calibri, sans-serif;
+  font-family: var(--font);
+  font-size: 16px;
+  box-sizing: border-box;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+.ph:before {
+  content: attr(data-t);
+}
+
+.em:before,
+.ph:before {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+}
+
+.em:before {
+  content: attr(data-d) '\0040'attr(data-u);
+}

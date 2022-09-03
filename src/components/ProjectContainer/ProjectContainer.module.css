@@ -25,13 +25,13 @@
   margin: 1.2em 0;
 }
 
-.project__stack-item {
+.project__stack_item {
   margin: 0.5em;
   font-weight: 500;
   font-size: 0.8rem;
   color: var(--clr-fg-alt);
 }
 
-.project .link--icon {
+.project :global(.link--icon) {
   margin-left: 0.5em;
 }

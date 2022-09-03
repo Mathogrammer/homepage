@@ -1,0 +1,16 @@
+.app {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.5;
+  color: var(--clr-fg);
+  background-color: var(--clr-bg);
+}
+
+.spacer {
+  height: 3em
+}
+
+@media (max-width: 600px) {
+  .spacer {
+    height: 2em;
+  }
+}

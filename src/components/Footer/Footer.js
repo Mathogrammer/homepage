@@ -1,15 +1,15 @@
-import './Footer.css'
+import Link from 'next/link'
+import styles from './Footer.module.css'
 
 const Footer = () => (
-  <footer className='footer'>
+    <footer className={styles.footer}>
     © 2022 Alexander Marc Mantel -&nbsp;
-    <a
-      href='/legalnotice-privacy.html'
-      className='link footer__link'
-    >
-      Legal Notice / Privacy Policy
-    </a>
-  </footer>
+        <Link href='/legalnotice-privacy'>
+            <a className={`link ${styles.footer__link}`}>
+        Legal Notice / Privacy Policy
+            </a>
+        </Link>
+    </footer>
 )
 
 export default Footer
