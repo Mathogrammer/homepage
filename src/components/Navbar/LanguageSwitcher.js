@@ -73,7 +73,7 @@ const LanguageSwitcher = () => {
                 renderValue={(locale) =>
                     <Box component="li" className={styles.wrapper}>
                         {languages[locale].name}
-                        {languages[locale].flag && <span className={`fp fp-rounded ${languages[locale].flag} ${styles.justify}`} />}
+                        {languages[locale].flag && <span className={`fp ${languages[locale].flag} ${styles.justify}`} />}
                     </Box>
                 }
             >
@@ -83,7 +83,7 @@ const LanguageSwitcher = () => {
                         justifyContent: 'space-between'
                     }}>
                         {languages[locale].name}
-                        {languages[locale].flag && <span className={`fp fp-rounded ${languages[locale].flag}`} />}
+                        {languages[locale].flag && <span className={`fp ${languages[locale].flag}`} />}
                     </MenuItem>
                 )}
             </Select>
