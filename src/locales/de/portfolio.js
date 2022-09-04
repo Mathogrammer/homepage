@@ -9,7 +9,7 @@ const about = {
     name: 'Alexander Mantel',
     role: `Full Stack Entwickler & M.\u202fSc. Student @ TU Clausthal`,
     description:
-        `Von der Entwicklung über den gesamten Stack, u.\u202fa. in Java, Kotlin, React.JS und Kubernetes, bis hin zum Lernen und Lehren von Mathematik \u2013 ich liebe es, allerlei Probleme zu lösen.`,
+        `Von der Entwicklung über den gesamten Stack, u.\u202fa. in Java, Kotlin, React.JS und Kubernetes, bis hin zum Lernen und Lehren von Mathematik \u2013 ich liebe es, komplexe Aufgaben zu verstehen und zu lösen.`,
     resume: 'https://www.amantel.de/cv.pdf',
     social: {
         github: 'https://github.com/Mathogrammer',
