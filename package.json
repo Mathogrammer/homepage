@@ -1,6 +1,6 @@
 {
   "name": "portfolio",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "homepage": "https://www.amantel.de",
   "dependencies": {
@@ -22,7 +22,7 @@
   "scripts": {
     "dev": "next dev",
     "start": "next start",
-    "build": "cross-env NEXT_PUBLIC_NODE_ENV=production next build",
+    "build": "next build",
     "lint": "next lint --fix .",
     "extract": "cross-env NODE_ENV=development lingui extract",
     "compile": "lingui compile"
