@@ -26,7 +26,7 @@ const LanguageSwitcher = () => {
         }
 
         // enable 'pseudo' locale only for development environment
-        if (process.env.NEXT_PUBLIC_NODE_ENV !== 'production') {
+        if (process.env.NODE_ENV !== 'production') {
             result.pseudo = {
                 name: t`Pseudo`
             }
