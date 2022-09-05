@@ -5,12 +5,16 @@
   background-color: var(--clr-bg);
 }
 
-.spacer {
+.spacerTop, .spacerBottom {
   height: 3em
 }
 
 @media (max-width: 600px) {
-  .spacer {
-    height: 2em;
+  .spacerTop {
+    height: 0;
+  }
+
+  .spacerBottom {
+    height: 1em;
   }
 }

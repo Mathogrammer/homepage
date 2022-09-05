@@ -17,14 +17,14 @@ const App = ({ header, about, projects, skills, contact }) => {
         <div>
             <Head />
             <div id='top' className={`${themeName} ${styles.app}`}>
-                <div className={styles.spacer} />
+                <div className={styles.spacerTop} />
                 <Header
                     header={header}
                     projects={projects}
                     skills={skills}
                     contact={contact}
                 />
-                <div className={styles.spacer} />
+                <div className={styles.spacerBottom} />
 
                 <main>
                     <About about={about} />
