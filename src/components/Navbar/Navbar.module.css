@@ -1,45 +1,54 @@
 @value app from '../../app.module.css';
 
 .nav {
-  background-color: var(--clr-bg);
+    background-color: var(--clr-bg);
 }
 
 .nav__list {
-  margin-right: 0.5em;
-  display: flex;
+    margin-right: 0.5em;
+    display: flex;
 }
+
 .nav__list_item {
-  margin-left: 1.5em;
+    margin-left: 1.5em;
+}
+
+.nav__home {
+    display: none;
 }
 
 .app .nav__hamburger {
-  display: none;
+    display: none;
 }
 
 .nav__theme.Mui-checked.MuiSwitch-thumb:before {
-  background-image: url('data:image/svg+xml;utf8;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="Brightness2Icon"><path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"></path></svg>');
+    background-image: url('data:image/svg+xml;utf8;<svg class="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root" focusable="false" aria-hidden="true" viewBox="0 0 24 24" data-testid="Brightness2Icon"><path d="M10 2c-1.82 0-3.53.5-5 1.35C7.99 5.08 10 8.3 10 12s-2.01 6.92-5 8.65C6.47 21.5 8.18 22 10 22c5.52 0 10-4.48 10-10S15.52 2 10 2z"></path></svg>');
 }
 
 @media (max-width: 600px) {
-  .nav__list {
-    display: none;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 2;
-  }
+    .nav__list {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: fixed;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+    }
 
-  .nav__list_item {
-    margin: 0.5em 0;
-  }
+    .nav__list_item {
+        margin: 0.5em 0;
+    }
 
-  .app .nav__hamburger {
-    display: flex;
-    z-index: 2;
-    margin-left: 0.8em;
-  }
+    .nav__home {
+        display: unset;
+    }
+
+    .app .nav__hamburger {
+        display: flex;
+        z-index: 2;
+        margin-left: 0.8em;
+    }
 }

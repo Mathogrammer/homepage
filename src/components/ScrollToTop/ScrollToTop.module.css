@@ -1,13 +1,13 @@
 .scroll_top {
-  position: fixed;
-  bottom: 2em;
-  right: 4em;
-  background-color: transparent;
-  z-index: 100;
+    position: fixed;
+    bottom: 2em;
+    right: 4em;
+    background-color: transparent;
+    z-index: 100;
 }
 
-@media (max-width: 900px) {
-  .scroll-top {
-    display: none;
-  }
+@media (max-width: 600px) {
+    .scroll_top {
+        display: none;
+    }
 }

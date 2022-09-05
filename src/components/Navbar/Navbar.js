@@ -19,6 +19,18 @@ const Navbar = ({ projects, skills, contact }) => {
                 style={{ display: showNavList ? 'flex' : null }}
                 className={styles.nav__list}
             >
+                <li className={`${styles.nav__list_item} ${styles.nav__home}`}>
+                    <a
+                        href='#top'
+                        onClick={toggleNavList}
+                        className='link link--nav'
+                    >
+                        <Trans>
+                            Intro
+                        </Trans>
+                    </a>
+                </li>
+
                 {projects.length ? (
                     <li className={styles.nav__list_item}>
                         <a
@@ -113,7 +125,7 @@ const Navbar = ({ projects, skills, contact }) => {
             />
 
             <LanguageSwitcher />
-            
+
 
             <button
                 type='button'

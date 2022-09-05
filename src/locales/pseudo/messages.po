@@ -22,7 +22,7 @@ msgid "Avatar placeholder"
 msgstr ""
 
 #: src/components/Contact/Contact.js:9
-#: src/components/Navbar/Navbar.js:57
+#: src/components/Navbar/Navbar.js:69
 msgid "Contact"
 msgstr ""
 
@@ -46,6 +46,10 @@ msgstr ""
 msgid "Hi, I'm<0/><1>{name}.</1>"
 msgstr ""
 
+#: src/components/Navbar/Navbar.js:28
+msgid "Intro"
+msgstr ""
+
 #: src/components/Navbar/LanguageSwitcher.js:72
 msgid "Language"
 msgstr ""
@@ -58,7 +62,7 @@ msgstr ""
 msgid "Mail"
 msgstr ""
 
-#: src/components/Navbar/Navbar.js:29
+#: src/components/Navbar/Navbar.js:41
 #: src/components/Projects/Projects.js:11
 msgid "Projects"
 msgstr ""
@@ -67,6 +71,6 @@ msgstr ""
 msgid "Pseudo"
 msgstr ""
 
-#: src/components/Navbar/Navbar.js:43
+#: src/components/Navbar/Navbar.js:55
 msgid "Skills"
 msgstr ""
