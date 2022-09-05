@@ -46,7 +46,7 @@
   align-items: center;
 }
 
-@media (max-width: 450px) {
+@media (max-width: 600px) {
   .app .about {
     align-items: flex-start;
     margin-top: 0em
