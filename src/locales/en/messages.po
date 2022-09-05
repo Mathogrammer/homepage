@@ -59,12 +59,13 @@ msgid "Mail"
 msgstr "Mail"
 
 #: src/components/Navbar/Navbar.js:29
+#: src/components/Projects/Projects.js:11
 msgid "Projects"
 msgstr "Projects"
 
 #: src/components/Navbar/LanguageSwitcher.js:31
-#~ msgid "Pseudo"
-#~ msgstr "Pseudo"
+msgid "Pseudo"
+msgstr "Pseudo"
 
 #: src/components/Navbar/Navbar.js:43
 msgid "Skills"
