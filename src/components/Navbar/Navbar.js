@@ -8,7 +8,7 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import styles from './Navbar.module.css';
 
 const Navbar = ({ projects, skills, contact }) => {
-    const [{ toggleTheme }] = useThemeContext()
+    const [{ toggleTheme, isDarkTheme }] = useThemeContext()
     const [showNavList, setShowNavList] = useState(false)
 
     const toggleNavList = () => setShowNavList(!showNavList)
@@ -61,7 +61,9 @@ const Navbar = ({ projects, skills, contact }) => {
                     </li>
                 ) : null}
             </ul>
+
             <Switch
+                checked={isDarkTheme}
                 onClick={toggleTheme}
                 className={`${styles.nav__theme}`}
                 aria-label='toggle theme'

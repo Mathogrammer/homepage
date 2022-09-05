@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState, useContext } from 'react'
+import { createContext, useEffect, useState, useContext, useMemo } from 'react'
 import PropTypes from 'prop-types'
 
 const ThemeContext = createContext()
@@ -12,7 +12,14 @@ const ThemeProvider = ({ children }) => {
         darkMediaQuery.addEventListener('change', (e) => {
             setThemeName(e.matches ? 'dark' : 'light')
         })
-    }, [])
+    }, []);
+
+    const [isLightTheme, isDarkTheme] = useMemo(() => {
+        if (themeName === 'dark')
+            return [false, true];
+
+        return [true, false];
+    }, [themeName]);
 
     const toggleTheme = () => {
         const name = themeName === 'dark' ? 'light' : 'dark'
@@ -21,7 +28,7 @@ const ThemeProvider = ({ children }) => {
     }
 
     return (
-        <ThemeContext.Provider value={[{ themeName, toggleTheme }]}>
+        <ThemeContext.Provider value={[{ themeName, toggleTheme, isLightTheme, isDarkTheme }]}>
             {children}
         </ThemeContext.Provider>
     )
