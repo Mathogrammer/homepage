@@ -10,4 +10,9 @@ module.exports = (phase) => ({
         // a non-locale prefixed path e.g. `/hello`
         defaultLocale: 'de',
     },
+    async rewrites() {
+        return {
+            fallback: [{ source: "/:path*", destination: "/_404/:path*" }],
+        };
+    },
 })

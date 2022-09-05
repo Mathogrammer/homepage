@@ -5,6 +5,7 @@ import { de, en } from 'make-plural/plurals';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import { ThemeProvider } from '../src/contexts/theme';
+import { messages } from '../src/locales/en/messages';
 import '../src/index.css';
 import 'flagpack/dist/flagpack.css';
 
@@ -32,6 +33,10 @@ export default function MyApp({ Component, pageProps }) {
         if (pageProps.translation) {
             i18n.load(locale, pageProps.translation)
             i18n.activate(locale)
+        }
+        else {
+            i18n.load('en', messages)
+            i18n.activate('en')
         }
     }, [locale, pageProps.translation])
 
