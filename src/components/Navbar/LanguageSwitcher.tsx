@@ -4,13 +4,20 @@ import { t } from "@lingui/macro";
 import styles from './LanguageSwitcher.module.css';
 import { Divider } from '@mui/material';
 
+type LanguageProps = {
+    [locale: string]: {
+        name: string;
+        flag?: string;
+    }
+}
+
 const LanguageSwitcher = () => {
     const router = useRouter();
 
     const [selected, setSelected] = useState(router.locale);
 
     const languages = useMemo(() => {
-        const result = {
+        const result: LanguageProps = {
             en: {
                 name: 'EN',
                 flag: 'gb'
@@ -31,7 +38,7 @@ const LanguageSwitcher = () => {
         return result;
     }, []);
 
-    const handleChange = useCallback((locale) => {
+    const handleChange = useCallback((locale: string) => {
         router.push(router.pathname, router.pathname, { locale });
     }, [router]);
 
@@ -41,8 +48,6 @@ const LanguageSwitcher = () => {
                 Object.entries(languages).map(([locale, { name, flag }]) => (
                     <li className={styles.lang__item} key={`lang-${locale}`}>
                         <button
-                            href=''
-                            rel='alternate'
                             onClick={() => handleChange(locale)}
                             onMouseOver={() => setSelected(locale)}
                             onMouseLeave={() => setSelected(router.locale)}
@@ -52,7 +57,7 @@ const LanguageSwitcher = () => {
                             {flag && <span className={`fp ${flag} ${styles.lang__flag}`} />}
                         </button>
                     </li>
-                )).reduce((acc, cur, index) => {
+                )).reduce<React.ReactNode[]>((acc, cur, index) => {
                     if (index > 0)
                         acc.push(<Divider key={`divider-${index}`} orientation="vertical" flexItem />);
 
