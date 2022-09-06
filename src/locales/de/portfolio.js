@@ -13,6 +13,7 @@ const about = {
     resume: 'https://www.amantel.de/cv.pdf',
     social: {
         github: 'https://github.com/Mathogrammer',
+        xing: 'https://www.xing.com/profile/AlexanderMarc_Mantel/',
         mail: 'mailto:contact@amantel.de'
     },
 }

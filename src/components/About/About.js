@@ -1,6 +1,7 @@
 import GitHubIcon from '@mui/icons-material/GitHub'
 import LinkedInIcon from '@mui/icons-material/LinkedIn'
 import MailIcon from '@mui/icons-material/Mail'
+import XingIcon from './XingIcon'
 import Image from 'next/image'
 import styles from './About.module.css'
 import photo from '../../../public/profile/profilePicRounded.png';
@@ -59,6 +60,19 @@ const About = ({
                                     <div className={styles.about__social}>
                                         <LinkedInIcon />
                                         LinkedIn
+                                    </div>
+                                </a>
+                            )}
+
+                            {social.xing && (
+                                <a
+                                    href={social.xing}
+                                    aria-label='xing'
+                                    className='link link--icon'
+                                >
+                                    <div className={styles.about__social}>
+                                        <XingIcon />
+                                        Xing
                                     </div>
                                 </a>
                             )}
