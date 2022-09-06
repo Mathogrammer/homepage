@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Fab } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import styles from './ScrollToTop.module.css';
 
@@ -14,11 +15,9 @@ const ScrollToTop = () => {
     }, []);
 
     return isVisible ? (
-        <div className={styles.scroll_top}>
-            <a href='#top'>
-                <ArrowUpwardIcon fontSize='large' />
-            </a>
-        </div>
+        <Fab className={styles.scroll_top} href='#top'>
+            <ArrowUpwardIcon sx={{ zIndex: 100, backgroundColor: 'transparent' }} fontSize='large' />
+        </Fab>
     ) : null;
 };
 

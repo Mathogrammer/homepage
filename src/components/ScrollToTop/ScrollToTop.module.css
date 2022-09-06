@@ -2,8 +2,9 @@
     position: fixed;
     bottom: 2em;
     right: 4em;
-    background-color: transparent;
     z-index: 100;
+    background-color: var(--clr-bg-alt);
+    color: var(--clr-fg);
 }
 
 @media (max-width: 600px) {
