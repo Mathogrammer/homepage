@@ -1,6 +1,6 @@
 // import { useMemo } from 'react'
-import uniqid from 'uniqid'
-import styles from './Skills.module.css'
+import uniqid from 'uniqid';
+import styles from './Skills.module.css';
 
 const Skills = ({ skills }) => {
 
@@ -8,7 +8,7 @@ const Skills = ({ skills }) => {
     //     skills.map
     // }, [skills]);
 
-    if (!skills) return null
+    if (!skills) return null;
 
     return (
         <section className='section skills' id='skills'>
@@ -29,7 +29,7 @@ const Skills = ({ skills }) => {
                                             {skill.name || skill}
                                         </a>
                                     </li>
-                                )
+                                );
                             }
                             return (
                                 <li
@@ -39,13 +39,13 @@ const Skills = ({ skills }) => {
                                     {skill.icon && <i className={`devicon-${skill.icon}`} />}
                                     {skill.name || skill}
                                 </li>
-                            )
+                            );
                         })}
                     </ul>
                 </div>
             ))}
         </section>
-    )
-}
+    );
+};
 
-export default Skills
+export default Skills;

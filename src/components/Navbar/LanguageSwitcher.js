@@ -1,6 +1,6 @@
-import { useRouter } from 'next/router'
-import { useCallback, useMemo, useState } from 'react'
-import { t } from "@lingui/macro"
+import { useRouter } from 'next/router';
+import { useCallback, useMemo, useState } from 'react';
+import { t } from "@lingui/macro";
 import styles from './LanguageSwitcher.module.css';
 import { Divider } from '@mui/material';
 
@@ -19,20 +19,20 @@ const LanguageSwitcher = () => {
                 name: 'DE',
                 flag: 'de'
             }
-        }
+        };
 
         // enable 'pseudo' locale only for development environment
         if (process.env.NODE_ENV !== 'production') {
             result.pseudo = {
                 name: t`Pseudo`
-            }
+            };
         }
 
         return result;
     }, []);
 
     const handleChange = useCallback((locale) => {
-        router.push(router.pathname, router.pathname, { locale })
+        router.push(router.pathname, router.pathname, { locale });
     }, [router]);
 
     return (
@@ -61,7 +61,7 @@ const LanguageSwitcher = () => {
                 }, [])
             }
         </ul>
-    )
-}
+    );
+};
 
-export default LanguageSwitcher
+export default LanguageSwitcher;

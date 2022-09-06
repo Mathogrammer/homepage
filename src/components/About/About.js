@@ -1,11 +1,11 @@
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LinkedInIcon from '@mui/icons-material/LinkedIn'
-import MailIcon from '@mui/icons-material/Mail'
-import XingIcon from './XingIcon'
-import Image from 'next/image'
-import styles from './About.module.css'
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import MailIcon from '@mui/icons-material/Mail';
+import XingIcon from './XingIcon';
+import Image from 'next/image';
+import styles from './About.module.css';
 import photo from '../../../public/profile/profilePicRounded.png';
-import { t, Trans } from "@lingui/macro"
+import { t, Trans } from "@lingui/macro";
 
 const About = ({
     about: { name, role, description, resume, social },
@@ -101,6 +101,6 @@ const About = ({
 
         <p className={styles.about__desc}>{description ?? ''}</p>
     </div>
-)
+);
 
-export default About
+export default About;

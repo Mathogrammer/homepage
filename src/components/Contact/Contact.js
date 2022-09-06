@@ -1,8 +1,8 @@
-import styles from './Contact.module.css'
-import { Trans } from "@lingui/macro"
+import styles from './Contact.module.css';
+import { Trans } from "@lingui/macro";
 
 const Contact = ({ contact }) => {
-    if (!contact.email) return null
+    if (!contact.email) return null;
 
     return (
         <section className={`section ${styles.contact} center`} id='contact'>
@@ -13,7 +13,7 @@ const Contact = ({ contact }) => {
                 </Trans></span>
             </a>
         </section>
-    )
-}
+    );
+};
 
-export default Contact
+export default Contact;

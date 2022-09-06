@@ -1,10 +1,10 @@
-import { Trans } from '@lingui/macro'
-import uniqid from 'uniqid'
-import ProjectContainer from '../ProjectContainer/ProjectContainer'
-import styles from './Projects.module.css'
+import { Trans } from '@lingui/macro';
+import uniqid from 'uniqid';
+import ProjectContainer from '../ProjectContainer/ProjectContainer';
+import styles from './Projects.module.css';
 
 const Projects = ({ projects }) => {
-    if (!projects.length) return null
+    if (!projects.length) return null;
 
     return (
         <section id='projects' className='section projects'>
@@ -16,7 +16,7 @@ const Projects = ({ projects }) => {
                 ))}
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;

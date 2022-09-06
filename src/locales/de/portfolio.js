@@ -2,7 +2,7 @@ const header = {
     // all the properties are optional - can be left empty or deleted
     homepage: 'https://www.amantel.de',
     // title: 'amantel',
-}
+};
 
 const about = {
     // all the properties are optional - can be left empty or deleted
@@ -16,7 +16,7 @@ const about = {
         xing: 'https://www.xing.com/profile/AlexanderMarc_Mantel/',
         mail: 'mailto:contact@amantel.de'
     },
-}
+};
 
 const projects = [
     // projects can be added an removed
@@ -60,7 +60,7 @@ const projects = [
     // sourceCode: 'https://github.com',
     // livePreview: 'https://github.com',
     // },
-]
+];
 
 const skills = {
     // skills can be added or removed
@@ -210,11 +210,11 @@ const skills = {
             href: 'www.jetbrains.com/rider',
         }
     ]
-}
+};
 
 const contact = {
     // email is optional - if left empty Contact section won't show up
     email: 'contact@amantel.de',
-}
+};
 
-export { header, about, projects, skills, contact }
+export { header, about, projects, skills, contact };

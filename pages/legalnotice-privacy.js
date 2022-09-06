@@ -1,6 +1,6 @@
-import Head from 'next/head'
-import Link from 'next/link'
-import styles from '../src/notice.module.css'
+import Head from 'next/head';
+import Link from 'next/link';
+import styles from '../src/notice.module.css';
 
 const NoticePage = () => (
     <div className={styles.root}>
@@ -80,6 +80,6 @@ const NoticePage = () => (
       to its Terms and Conditions.
         </p>
     </div>
-)
+);
 
-export default NoticePage
+export default NoticePage;

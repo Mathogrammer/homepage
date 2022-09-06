@@ -1,7 +1,7 @@
-import uniqid from 'uniqid'
-import GitHubIcon from '@mui/icons-material/GitHub'
-import LaunchIcon from '@mui/icons-material/Launch'
-import styles from './ProjectContainer.module.css'
+import uniqid from 'uniqid';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LaunchIcon from '@mui/icons-material/Launch';
+import styles from './ProjectContainer.module.css';
 
 const ProjectContainer = ({ project }) => (
     <div className={styles.project}>
@@ -41,4 +41,4 @@ const ProjectContainer = ({ project }) => (
     </div>
 );
 
-export default ProjectContainer
+export default ProjectContainer;

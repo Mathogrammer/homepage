@@ -8,10 +8,10 @@ import LanguageSwitcher from "./LanguageSwitcher";
 import styles from './Navbar.module.css';
 
 const Navbar = ({ projects, skills, contact }) => {
-    const [{ toggleTheme, isDarkTheme }] = useThemeContext()
-    const [showNavList, setShowNavList] = useState(false)
+    const [{ toggleTheme, isDarkTheme }] = useThemeContext();
+    const [showNavList, setShowNavList] = useState(false);
 
-    const toggleNavList = () => setShowNavList(!showNavList)
+    const toggleNavList = () => setShowNavList(!showNavList);
 
     return (
         <nav className={`center ${styles.nav}`}>
@@ -136,7 +136,7 @@ const Navbar = ({ projects, skills, contact }) => {
                 {showNavList ? <CloseIcon /> : <MenuIcon />}
             </button>
         </nav>
-    )
-}
+    );
+};
 
-export default Navbar
+export default Navbar;

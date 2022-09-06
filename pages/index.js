@@ -1,17 +1,17 @@
-import { useThemeContext } from '../src/contexts/theme'
-import Head from '../src/CustomHead'
-import Header from '../src/components/Header/Header'
-import About from '../src/components/About/About'
-import Projects from '../src/components/Projects/Projects'
-import Skills from '../src/components/Skills/Skills'
-import ScrollToTop from '../src/components/ScrollToTop/ScrollToTop'
-import Contact from '../src/components/Contact/Contact'
-import Footer from '../src/components/Footer/Footer'
-import styles from '../src/app.module.css'
-import ReactDOMServer from 'react-dom/server'
+import { useThemeContext } from '../src/contexts/theme';
+import Head from '../src/CustomHead';
+import Header from '../src/components/Header/Header';
+import About from '../src/components/About/About';
+import Projects from '../src/components/Projects/Projects';
+import Skills from '../src/components/Skills/Skills';
+import ScrollToTop from '../src/components/ScrollToTop/ScrollToTop';
+import Contact from '../src/components/Contact/Contact';
+import Footer from '../src/components/Footer/Footer';
+import styles from '../src/app.module.css';
+import ReactDOMServer from 'react-dom/server';
 
 const App = ({ header, about, projects, skills, contact }) => {
-    const [{ themeName }] = useThemeContext()
+    const [{ themeName }] = useThemeContext();
 
     return (
         <div>
@@ -37,8 +37,8 @@ const App = ({ header, about, projects, skills, contact }) => {
                 <Footer />
             </div>
         </div>
-    )
-}
+    );
+};
 
 export async function getStaticProps(context) {
     const locale = context.locale;
@@ -62,7 +62,7 @@ export async function getStaticProps(context) {
             projects,
             translation: data.messages
         },
-    }
+    };
 }
 
-export default App
+export default App;

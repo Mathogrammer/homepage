@@ -1,6 +1,6 @@
-import Link from 'next/link'
-import styles from './Footer.module.css'
-import { Trans } from "@lingui/macro"
+import Link from 'next/link';
+import styles from './Footer.module.css';
+import { Trans } from "@lingui/macro";
 
 const Footer = () => (
     <footer className={styles.footer}>
@@ -13,6 +13,6 @@ const Footer = () => (
             </a>
         </Link>
     </footer>
-)
+);
 
-export default Footer
+export default Footer;

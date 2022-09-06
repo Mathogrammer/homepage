@@ -1,4 +1,4 @@
-import Head from 'next/head'
+import Head from 'next/head';
 
 const CustomHead = () => (
     <Head>
@@ -7,6 +7,6 @@ const CustomHead = () => (
         <meta name='description' content='Portfolio' />
         <title>Alexander Mantel</title>
     </Head>
-)
+);
 
-export default CustomHead
+export default CustomHead;
