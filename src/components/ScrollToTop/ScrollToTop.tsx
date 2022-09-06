@@ -3,6 +3,16 @@ import { Fab } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
 import styles from './ScrollToTop.module.css';
 
+const fabClass = {
+    position: 'fixed',
+    bottom: '2em',
+    right: '4em',
+    zIndex: 100,
+    backgroundColor: 'var(--clr-bg-alt)',
+    color: 'var(--clr-fg)',
+};
+
+
 const ScrollToTop = () => {
     const [isVisible, setIsVisible] = useState(false);
 
@@ -15,7 +25,7 @@ const ScrollToTop = () => {
     }, []);
 
     return isVisible ? (
-        <Fab className={styles.scroll_top} href='#top'>
+        <Fab sx={fabClass} href='#top'>
             <ArrowUpwardIcon sx={{ zIndex: 100, backgroundColor: 'transparent' }} fontSize='large' />
         </Fab>
     ) : null;
