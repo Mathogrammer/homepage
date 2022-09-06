@@ -25,13 +25,14 @@ type ProjectsInfo = Array<{
     livePreview?: string;
 }>
 
-type SkillsInfo = {
-    [category: string]: Array<string | {
+type SkillsInfo = Array<{
+    category: string;
+    items: Array<string | {
         name: string;
         icon?: string;
         href?: string;
     }>
-}
+}>
 
 type ContactInfo = {
     email?: string;

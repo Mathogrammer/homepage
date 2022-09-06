@@ -12,7 +12,7 @@ const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
     return (
         <section className='section skills' id='skills'>
             <h2 className='section__title'>Skills</h2>
-            {Object.entries(skills).map(([category, items], catergoryIndex) => (
+            {skills.map(({ category, items }, catergoryIndex) => (
                 <div key={`skill-category-${catergoryIndex}`}>
                     <h4 className={styles.skills__category__title}>{category}</h4>
                     <ul className={styles.skills__list}>
