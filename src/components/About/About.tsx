@@ -1,15 +1,17 @@
+import { t, Trans } from "@lingui/macro";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MailIcon from '@mui/icons-material/Mail';
-import XingIcon from './XingIcon';
 import Image from 'next/image';
 import styles from './About.module.css';
+import XingIcon from './XingIcon';
 import photo from '../../../public/profile/profilePicRounded.png';
-import { t, Trans } from "@lingui/macro";
+import type { Portfolio } from "../../portfolioTypes";
+
 
 const About = ({
-    about: { name, role, description, resume, social },
-}) => (
+    about: { name, role, description, resume, social }
+}: Pick<Portfolio, 'about'>) => (
     <div className={`${styles.about} center`}>
         <div className={styles.about__header}>
             {photo && (
@@ -30,7 +32,7 @@ const About = ({
                 <div className='center'>
                     {resume && (
                         <a href={resume}>
-                            <span type='button' className='btn btn--outline'><Trans>
+                            <span className='btn btn--outline'><Trans>
                                 Curriculum Vitae [DE]
                             </Trans></span>
                         </a>

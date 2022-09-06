@@ -1,9 +1,9 @@
 import { Trans } from '@lingui/macro';
-import uniqid from 'uniqid';
+import { StaticProps } from '../../../pages';
 import ProjectContainer from '../ProjectContainer/ProjectContainer';
 import styles from './Projects.module.css';
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects }: Pick<StaticProps['props'], 'projects'>) => {
     if (!projects.length) return null;
 
     return (
@@ -11,8 +11,8 @@ const Projects = ({ projects }) => {
             <h2 className='section__title'><Trans>Projects</Trans></h2>
 
             <div className={styles.projects__grid}>
-                {projects.map((project) => (
-                    <ProjectContainer key={uniqid()} project={project} />
+                {projects.map((project, index) => (
+                    <ProjectContainer key={`project-${index}`} project={project} />
                 ))}
             </div>
         </section>

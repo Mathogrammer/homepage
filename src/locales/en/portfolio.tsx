@@ -1,15 +1,17 @@
-const header = {
+import { HeaderInfo, AboutInfo, ProjectsInfo, SkillsInfo, ContactInfo, Portfolio } from '../../portfolioTypes';
+
+const header: HeaderInfo = {
     // all the properties are optional - can be left empty or deleted
     homepage: 'https://www.amantel.de',
     // title: 'amantel',
 };
 
-const about = {
+const about: AboutInfo = {
     // all the properties are optional - can be left empty or deleted
     name: 'Alexander Mantel',
-    role: `Full Stack Entwickler & M.\u202fSc. Student @ TU Clausthal`,
+    role: `Full Stack Developer & M.\u202fSc. Student @ TU Clausthal`,
     description:
-        `Von der Entwicklung über den gesamten Stack, u.\u202fa. in Java, Kotlin, React.JS und Kubernetes, bis hin zum Lernen und Lehren von Mathematik \u2013 ich liebe es, komplexe Aufgaben zu verstehen und zu lösen.`,
+        `From developing across the stack in Java, Kotlin, React.JS, and Kubernetes to learning and teaching mathematics, I love to solve problems of all shapes and sizes.`,
     resume: 'https://www.amantel.de/cv.pdf',
     social: {
         github: 'https://github.com/Mathogrammer',
@@ -18,7 +20,7 @@ const about = {
     },
 };
 
-const projects = [
+const projects: ProjectsInfo = [
     // projects can be added an removed
     // if there are no projects, Projects section won't show up
     {
@@ -26,30 +28,27 @@ const projects = [
         description:
             (
                 <p>
-                    <em>Laufendes Forschungsprojekt: </em>
-                    Das Ziel des Projektes ist es Menschen durch selbst erstellte Videotutorials, die mittels Datenbrillen gefilmt werden, dabei zu unterstützen, ihr Wissen weiterzugeben.
+                    <em>Ongoing Research Project: </em>
+                    The aim of the project is to aid individuals in transferring their knowledge to others via self-made video tutorials recorded on smart glasses.
                     <br /><br />
-                    Insbesondere sollen Mitarbeiter*innen von kleinen und mittelständischen Unternehmen sollen dabei in der Lage versetzt werden, mit geringem Aufwand ihr Wissen zu dokumentieren, für die sie vorher keine geeigneten Möglichkeiten der Explizierung hatten.
+                    In particular, it strives to empower employees in dextrous work environments to share their modus-operandi in ways where documentation or even third-party footage isn&apos;t effective.
                 </p>
             ),
         stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'kubernetes'],
-        // sourceCode: 'https://github.com/Morganbb104/Event_Planner_project2',
         livePreview: 'https://smartorials.de',
     },
     {
-        name: `Pflegebrille 2.0`,
+        name: `Pflegebrille 2.0\n(Care Lenses)`,
         description:
             (
                 <p>
-                    <em>Forschungsprojekt: </em>
-                    Die Pflegebrille ist derzeit das einzige verfügbare Konzept zur Unterstützung der Pflegepraxis in Deutschland, das eine Vielzahl von unterschiedlichen Tätigkeiten anbietet.
+                    <em>Research Project: </em>
+                    The Care Lenses aim to and are currently the only available concept to support nursing practice that offers a variety of different activities via smart glasses in Germany.
                     <br /><br />
-                    Darunter zählen das Prüfen von Patientendaten und -berichten, das Dokumentieren von Pflegetätigkeiten, das Ansehen von professionell erstellten Arbeitsabläufen sowie das Konsultieren mit Ärzten und anderen Pflegekräften in Echtzeit.
+                    These include inspecting patient info and updates, documenting nursing activities, viewing professional workflows, as well as live consulting with registered doctors and nurses.
                 </p>
             ),
         stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'kubernetes', 'webrtc', 'opencv'],
-        // stack: ['localstorage', 'Openweather API', 'Google Map API', 'Movie Database API'],
-        // sourceCode: 'https://github.com/Mike-C-Sanders/Movie-Tracker',
         livePreview: 'https://pflegebrille.de',
     },
     // {
@@ -62,14 +61,14 @@ const projects = [
     // },
 ];
 
-const skills = {
+const skills: SkillsInfo = {
     // skills can be added or removed
     // if there are no skills, Skills section won't show up
-    'Softwarearchitekturen': [
+    'Architecture': [
         'RESTful APIs',
         'CI/CD'
     ],
-    'Programmiersprachen': [
+    'Languages': [
         {
             name: 'Java',
             icon: 'java-plain',
@@ -121,7 +120,7 @@ const skills = {
             href: 'www.sqlite.com',
         },
     ],
-    'Platform Entwicklung & Administration': [
+    'Platform Development & Administration': [
         {
             name: 'Android',
             icon: 'android-plain',
@@ -148,7 +147,7 @@ const skills = {
             href: 'www.nodejs.org',
         },
     ],
-    'Frameworks & Bibliotheken': [
+    'Frameworks & Libraries': [
         {
             name: 'Android Room',
             href: 'developer.android.com/training/data-storage/room',
@@ -168,7 +167,7 @@ const skills = {
             href: 'www.opencv.org',
         },
     ],
-    'Tools & Betriebssysteme': [
+    'Tools & Operating Systems': [
         {
             name: 'Windows',
             icon: 'windows8-plain',
@@ -212,9 +211,9 @@ const skills = {
     ]
 };
 
-const contact = {
+const contact: ContactInfo = {
     // email is optional - if left empty Contact section won't show up
     email: 'contact@amantel.de',
 };
 
-export { header, about, projects, skills, contact };
+export const portfolio: Portfolio = { header, about, projects, skills, contact };

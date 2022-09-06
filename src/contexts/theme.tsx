@@ -1,9 +1,21 @@
 import { createContext, useEffect, useState, useContext, useMemo } from 'react';
 import PropTypes from 'prop-types';
 
-const ThemeContext = createContext();
+type Context = [{
+    themeName: string;
+    toggleTheme?: () => void;
+    isLightTheme: boolean;
+}]
 
-const ThemeProvider = ({ children }) => {
+const defaultContext: Context = [{ 
+    themeName: 'light',
+    toggleTheme: undefined,
+    isLightTheme: true,
+}];
+
+const ThemeContext = createContext(defaultContext);
+
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const [themeName, setThemeName] = useState('light');
 
     useEffect(() => {
@@ -14,11 +26,8 @@ const ThemeProvider = ({ children }) => {
         });
     }, []);
 
-    const [isLightTheme, isDarkTheme] = useMemo(() => {
-        if (themeName === 'dark')
-            return [false, true];
-
-        return [true, false];
+    const isLightTheme = useMemo(() => {
+        return themeName !== 'dark';
     }, [themeName]);
 
     const toggleTheme = () => {
@@ -28,7 +37,7 @@ const ThemeProvider = ({ children }) => {
     };
 
     return (
-        <ThemeContext.Provider value={[{ themeName, toggleTheme, isLightTheme, isDarkTheme }]}>
+        <ThemeContext.Provider value={[{ themeName, toggleTheme, isLightTheme }]}>
             {children}
         </ThemeContext.Provider>
     );

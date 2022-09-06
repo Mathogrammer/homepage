@@ -9,8 +9,24 @@ import Contact from '../src/components/Contact/Contact';
 import Footer from '../src/components/Footer/Footer';
 import styles from '../src/app.module.css';
 import ReactDOMServer from 'react-dom/server';
+import { Portfolio, ProjectsInfo } from '../src/portfolioTypes';
+import { Messages } from "@lingui/core";
+import { GetStaticProps } from 'next';
 
-const App = ({ header, about, projects, skills, contact }) => {
+type PortfolioAmend = Omit<Portfolio, 'projects'>;
+type ProjectsInfoAmend = Omit<ProjectsInfo[number], 'description'>;
+
+type StaticProps = {
+    props: PortfolioAmend & {
+        projects: Array<ProjectsInfoAmend & {
+            description: string;
+        }>;
+        translation: Messages;
+    }
+} 
+
+
+const App = ({ header, about, projects, skills, contact }: StaticProps['props']) => {
     const [{ themeName }] = useThemeContext();
 
     return (
@@ -39,30 +55,33 @@ const App = ({ header, about, projects, skills, contact }) => {
         </div>
     );
 };
-
-export async function getStaticProps(context) {
+export const getStaticProps: GetStaticProps = async (context) => {
     const locale = context.locale;
-    let data;
+    let data: { messages: Messages };
     if (process.env.NODE_ENV === 'production')
         data = await import(`../src/locales/${locale}/messages`);
     else
         data = await import(`@lingui/loader!../src/locales/${locale}/messages.po`);
 
     const portfolioLocale = locale === 'pseudo' ? 'en' : locale;
-    const portfolio = await import(`../src/locales/${portfolioLocale}/portfolio`);
+    const portfolio: Portfolio = await import(`../src/locales/${portfolioLocale}/portfolio`).then(module => module.portfolio);
 
     const projects = portfolio.projects.map(project => ({
         ...project,
-        description: ReactDOMServer.renderToStaticMarkup(project.description),
+        description: typeof project.description === 'string' ? project.description : ReactDOMServer.renderToStaticMarkup(project.description),
     }));
 
-    return {
+    const result: StaticProps = {
         props: {
             ...portfolio,
             projects,
             translation: data.messages
         },
     };
-}
+
+    return result;
+};
+
+export type { StaticProps };
 
 export default App;

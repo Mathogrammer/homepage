@@ -1,9 +1,9 @@
-import uniqid from 'uniqid';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LaunchIcon from '@mui/icons-material/Launch';
 import styles from './ProjectContainer.module.css';
+import type { StaticProps } from '../../../pages/index';
 
-const ProjectContainer = ({ project }) => (
+const ProjectContainer = ({ project } : { project: StaticProps['props']['projects'][number]}) => (
     <div className={styles.project}>
         <h3>{project.name}</h3>
     
@@ -11,8 +11,8 @@ const ProjectContainer = ({ project }) => (
 
         {project.stack && (
             <ul className={styles.project__stack}>
-                {project.stack.map((item) => (
-                    <li key={uniqid()} className={styles.project__stack_item}>
+                {project.stack.map((item, index) => (
+                    <li key={`project-stack-${index}`} className={styles.project__stack_item}>
                         {item}
                     </li>
                 ))}

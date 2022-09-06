@@ -1,7 +1,8 @@
+import { Portfolio } from '../../portfolioTypes';
 import Navbar from '../Navbar/Navbar';
 import styles from './Header.module.css';
 
-const Header = ({ header: { homepage, title }, projects, skills, contact }) => (
+const Header = ({ header: { homepage, title }, projects, skills, contact }: Omit<Portfolio, 'about'>) => (
     <header className={`${styles.header} center`}>
         <h3>
             {homepage ? (

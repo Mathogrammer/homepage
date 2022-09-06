@@ -1,15 +1,17 @@
-const header = {
+import { HeaderInfo, AboutInfo, ProjectsInfo, SkillsInfo, ContactInfo, Portfolio } from "../../portfolioTypes";
+
+const header: HeaderInfo = {
     // all the properties are optional - can be left empty or deleted
     homepage: 'https://www.amantel.de',
     // title: 'amantel',
 };
 
-const about = {
+const about: AboutInfo = {
     // all the properties are optional - can be left empty or deleted
     name: 'Alexander Mantel',
-    role: `Full Stack Developer & M.\u202fSc. Student @ TU Clausthal`,
+    role: `Full Stack Entwickler & M.\u202fSc. Student @ TU Clausthal`,
     description:
-        `From developing across the stack in Java, Kotlin, React.JS, and Kubernetes to learning and teaching mathematics, I love to solve problems of all shapes and sizes.`,
+        `Von der Entwicklung über den gesamten Stack, u.\u202fa. in Java, Kotlin, React.JS und Kubernetes, bis hin zum Lernen und Lehren von Mathematik \u2013 ich liebe es, komplexe Aufgaben zu verstehen und zu lösen.`,
     resume: 'https://www.amantel.de/cv.pdf',
     social: {
         github: 'https://github.com/Mathogrammer',
@@ -18,7 +20,7 @@ const about = {
     },
 };
 
-const projects = [
+const projects: ProjectsInfo = [
     // projects can be added an removed
     // if there are no projects, Projects section won't show up
     {
@@ -26,10 +28,10 @@ const projects = [
         description:
             (
                 <p>
-                    <em>Ongoing Research Project: </em>
-                    The aim of the project is to aid individuals in transferring their knowledge to others via self-made video tutorials recorded on smart glasses.
+                    <em>Laufendes Forschungsprojekt: </em>
+                    Das Ziel des Projektes ist es Menschen durch selbst erstellte Videotutorials, die mittels Datenbrillen gefilmt werden, dabei zu unterstützen, ihr Wissen weiterzugeben.
                     <br /><br />
-                    In particular, it strives to empower employees in dextrous work environments to share their modus-operandi in ways where documentation or even third-party footage isn&apos;t effective.
+                    Insbesondere sollen Mitarbeiter*innen von kleinen und mittelständischen Unternehmen sollen dabei in der Lage versetzt werden, mit geringem Aufwand ihr Wissen zu dokumentieren, für die sie vorher keine geeigneten Möglichkeiten der Explizierung hatten.
                 </p>
             ),
         stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'kubernetes'],
@@ -37,14 +39,14 @@ const projects = [
         livePreview: 'https://smartorials.de',
     },
     {
-        name: `Pflegebrille 2.0\n(Care Lenses)`,
+        name: `Pflegebrille 2.0`,
         description:
             (
                 <p>
-                    <em>Research Project: </em>
-                    The Care Lenses aim to and are currently the only available concept to support nursing practice that offers a variety of different activities via smart glasses in Germany.
+                    <em>Forschungsprojekt: </em>
+                    Die Pflegebrille ist derzeit das einzige verfügbare Konzept zur Unterstützung der Pflegepraxis in Deutschland, das eine Vielzahl von unterschiedlichen Tätigkeiten anbietet.
                     <br /><br />
-                    These include inspecting patient info and updates, documenting nursing activities, viewing professional workflows, as well as live consulting with registered doctors and nurses.
+                    Darunter zählen das Prüfen von Patientendaten und -berichten, das Dokumentieren von Pflegetätigkeiten, das Ansehen von professionell erstellten Arbeitsabläufen sowie das Konsultieren mit Ärzten und anderen Pflegekräften in Echtzeit.
                 </p>
             ),
         stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'kubernetes', 'webrtc', 'opencv'],
@@ -62,14 +64,14 @@ const projects = [
     // },
 ];
 
-const skills = {
+const skills: SkillsInfo = {
     // skills can be added or removed
     // if there are no skills, Skills section won't show up
-    'Architecture': [
+    'Softwarearchitekturen': [
         'RESTful APIs',
         'CI/CD'
     ],
-    'Languages': [
+    'Programmiersprachen': [
         {
             name: 'Java',
             icon: 'java-plain',
@@ -121,7 +123,7 @@ const skills = {
             href: 'www.sqlite.com',
         },
     ],
-    'Platform Development & Administration': [
+    'Platform Entwicklung & Administration': [
         {
             name: 'Android',
             icon: 'android-plain',
@@ -148,7 +150,7 @@ const skills = {
             href: 'www.nodejs.org',
         },
     ],
-    'Frameworks & Libraries': [
+    'Frameworks & Bibliotheken': [
         {
             name: 'Android Room',
             href: 'developer.android.com/training/data-storage/room',
@@ -168,7 +170,7 @@ const skills = {
             href: 'www.opencv.org',
         },
     ],
-    'Tools & Operating Systems': [
+    'Tools & Betriebssysteme': [
         {
             name: 'Windows',
             icon: 'windows8-plain',
@@ -212,9 +214,9 @@ const skills = {
     ]
 };
 
-const contact = {
+const contact: ContactInfo = {
     // email is optional - if left empty Contact section won't show up
     email: 'contact@amantel.de',
 };
 
-export { header, about, projects, skills, contact };
+export const portfolio: Portfolio = { header, about, projects, skills, contact };

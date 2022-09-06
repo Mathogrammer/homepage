@@ -6,9 +6,10 @@ import { useState } from 'react';
 import { useThemeContext } from '../../contexts/theme';
 import LanguageSwitcher from "./LanguageSwitcher";
 import styles from './Navbar.module.css';
+import { Portfolio } from "../../portfolioTypes";
 
-const Navbar = ({ projects, skills, contact }) => {
-    const [{ toggleTheme, isDarkTheme }] = useThemeContext();
+const Navbar = ({ projects, skills, contact }: Pick<Portfolio, 'projects' | 'skills' | 'contact'>) => {
+    const [{ toggleTheme, isLightTheme }] = useThemeContext();
     const [showNavList, setShowNavList] = useState(false);
 
     const toggleNavList = () => setShowNavList(!showNavList);
@@ -16,7 +17,7 @@ const Navbar = ({ projects, skills, contact }) => {
     return (
         <nav className={`center ${styles.nav}`}>
             <ul
-                style={{ display: showNavList ? 'flex' : null }}
+                style={{ display: showNavList ? 'flex' : undefined }}
                 className={styles.nav__list}
             >
                 <li className={`${styles.nav__list_item} ${styles.nav__home}`}>
@@ -75,7 +76,7 @@ const Navbar = ({ projects, skills, contact }) => {
             </ul>
 
             <Switch
-                checked={isDarkTheme}
+                checked={!isLightTheme}
                 onClick={toggleTheme}
                 className={`${styles.nav__theme}`}
                 aria-label='toggle theme'

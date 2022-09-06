@@ -8,6 +8,7 @@ import { ThemeProvider } from '../src/contexts/theme';
 import { messages } from '../src/locales/en/messages';
 import '../src/index.css';
 import 'flagpack/dist/flagpack.css';
+import { AppProps } from 'next/app';
 
 i18n.loadLocaleData({
     en: { plurals: en },
@@ -16,9 +17,9 @@ i18n.loadLocaleData({
 });
 
 // This default export is required in a new `pages/_app.js` file.
-export default function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }: AppProps) {
     const router = useRouter();
-    const locale = router.locale || router.defaultLocale;
+    const locale = router.locale || router.defaultLocale || 'de';
     const firstRender = useRef(true);
 
     if (pageProps.translation && firstRender.current) {

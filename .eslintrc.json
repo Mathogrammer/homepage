@@ -3,12 +3,14 @@
     "browser": true,
     "es2021": true
   },
-  "extends": ["eslint:recommended", "next"],
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": ["plugin:@typescript-eslint/recommended", "next"],
   "rules": {
     "no-unused-vars": "warn",
     "no-console": "off",
     "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "react/prop-types": "off",
     "indent": ["warn", 4],
     "semi": ["error", "always"]

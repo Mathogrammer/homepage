@@ -1,8 +1,7 @@
-// import { useMemo } from 'react'
-import uniqid from 'uniqid';
+import { Portfolio } from '../../portfolioTypes';
 import styles from './Skills.module.css';
 
-const Skills = ({ skills }) => {
+const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
 
     // const skillCategories = useMemo(() => {
     //     skills.map
@@ -13,31 +12,31 @@ const Skills = ({ skills }) => {
     return (
         <section className='section skills' id='skills'>
             <h2 className='section__title'>Skills</h2>
-            {Object.entries(skills).map(([category, items]) => (
-                <div key={uniqid()}>
+            {Object.entries(skills).map(([category, items], catergoryIndex) => (
+                <div key={`skill-category-${catergoryIndex}`}>
                     <h4 className={styles.skills__category__title}>{category}</h4>
                     <ul className={styles.skills__list}>
-                        {items.map((skill) => {
-                            if (skill.href) {
+                        {items.map((skill, itemIndex) => {
+                            if (typeof skill !== 'string' && skill.href) {
                                 return (
                                     <li
-                                        key={uniqid()}
+                                        key={`skill-item-${itemIndex}`}
                                         className={`${styles.skills__list_item} btn btn--plain`}
                                     >
                                         <a href={`https://${skill.href}`}>
-                                            {skill.icon && <i className={`devicon-${skill.icon}`} />}
-                                            {skill.name || skill}
+                                            {!!skill.icon && <i className={`devicon-${skill.icon}`} />}
+                                            {skill.name}
                                         </a>
                                     </li>
                                 );
                             }
                             return (
                                 <li
-                                    key={uniqid()}
+                                    key={`skill-item-${itemIndex}`}
                                     className={`${styles.skills__list_item} btn btn--plain`}
                                 >
-                                    {skill.icon && <i className={`devicon-${skill.icon}`} />}
-                                    {skill.name || skill}
+                                    {!!(typeof skill !== 'string' && skill.icon) && <i className={`devicon-${skill.icon}`} />}
+                                    {typeof skill === 'string' ? skill : skill.name}
                                 </li>
                             );
                         })}
