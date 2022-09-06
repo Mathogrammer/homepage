@@ -5,7 +5,7 @@ import styles from '../src/notice.module.css';
 const NoticePage = () => (
     <div className={styles.root}>
         <Head>
-            <meta charset='utf-8' />
+            <meta charSet='utf-8' />
             <title>Legal Notice / Privacy Policy</title>
             <meta name='viewport' content='width=device-width, initial-scale=1' />
             <meta name='robots' content='noindex' />
