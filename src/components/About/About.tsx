@@ -6,7 +6,7 @@ import Image from 'next/image';
 import styles from './About.module.css';
 import XingIcon from './XingIcon';
 import photo from '../../../public/profile/profilePicRounded.png';
-import type { Portfolio } from "../../portfolioTypes";
+import type { Portfolio } from "../../portfolio-types";
 
 
 const About = ({

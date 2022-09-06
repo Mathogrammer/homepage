@@ -1,4 +1,4 @@
-import { Portfolio } from '../../portfolioTypes';
+import { Portfolio } from '../../portfolio-types';
 import styles from './Skills.module.css';
 
 const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {

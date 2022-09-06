@@ -1,4 +1,4 @@
-import { Portfolio } from '../../portfolioTypes';
+import { Portfolio } from '../../portfolio-types';
 import Navbar from '../Navbar/Navbar';
 import styles from './Header.module.css';
 

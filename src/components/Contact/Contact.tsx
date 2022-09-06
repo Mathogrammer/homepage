@@ -1,6 +1,6 @@
 import styles from './Contact.module.css';
 import { Trans } from "@lingui/macro";
-import { Portfolio } from '../../portfolioTypes';
+import { Portfolio } from '../../portfolio-types';
 
 const Contact = ({ contact }: Pick<Portfolio, 'contact'>) => {
     if (!contact?.email) return null;

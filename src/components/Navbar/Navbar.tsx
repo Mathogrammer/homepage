@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { useThemeContext } from '../../contexts/theme';
 import LanguageSwitcher from "./LanguageSwitcher";
 import styles from './Navbar.module.css';
-import { Portfolio } from "../../portfolioTypes";
+import { Portfolio } from "../../portfolio-types";
 
 const Navbar = ({ projects, skills, contact }: Pick<Portfolio, 'projects' | 'skills' | 'contact'>) => {
     const [{ toggleTheme, isLightTheme }] = useThemeContext();

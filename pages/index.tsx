@@ -9,7 +9,7 @@ import Contact from '../src/components/Contact/Contact';
 import Footer from '../src/components/Footer/Footer';
 import styles from '../src/app.module.css';
 import ReactDOMServer from 'react-dom/server';
-import { Portfolio, ProjectsInfo } from '../src/portfolioTypes';
+import { Portfolio, ProjectsInfo } from '../src/portfolio-types';
 import { Messages } from "@lingui/core";
 import { GetStaticProps } from 'next';
 

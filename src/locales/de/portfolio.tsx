@@ -1,4 +1,4 @@
-import { HeaderInfo, AboutInfo, ProjectsInfo, SkillsInfo, ContactInfo, Portfolio } from "../../portfolioTypes";
+import { HeaderInfo, AboutInfo, ProjectsInfo, SkillsInfo, ContactInfo, Portfolio } from "../../portfolio-types";
 
 const header: HeaderInfo = {
     // all the properties are optional - can be left empty or deleted
