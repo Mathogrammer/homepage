@@ -13,24 +13,24 @@ msgstr ""
 "Language-Team: \n"
 "Plural-Forms: \n"
 
-#: src/components/About/About.js:86
+#: src/components/About/About.tsx:102
 msgid "A {role}."
 msgstr "A {role}."
 
-#: src/components/About/About.js:16
+#: src/components/About/About.tsx:19
 msgid "Avatar placeholder"
 msgstr "Avatar placeholder"
 
-#: src/components/Contact/Contact.js:9
-#: src/components/Navbar/Navbar.js:69
+#: src/components/Contact/Contact.tsx:10
+#: src/components/Navbar/Navbar.tsx:70
 msgid "Contact"
 msgstr "Contact"
 
-#: src/components/About/About.js:32
+#: src/components/About/About.tsx:35
 msgid "Curriculum Vitae [DE]"
 msgstr "Curriculum Vitae [DE]"
 
-#: src/components/Contact/Contact.js:11
+#: src/components/Contact/Contact.tsx:12
 msgid "Email me"
 msgstr "Email me"
 
@@ -42,11 +42,11 @@ msgstr "Email me"
 #~ msgid "German"
 #~ msgstr "German"
 
-#: src/components/About/About.js:22
+#: src/components/About/About.tsx:25
 msgid "Hi, I'm<0/><1>{name}.</1>"
 msgstr "Hi, I'm<0/><1>{name}.</1>"
 
-#: src/components/Navbar/Navbar.js:28
+#: src/components/Navbar/Navbar.tsx:29
 msgid "Intro"
 msgstr "Intro"
 
@@ -54,23 +54,23 @@ msgstr "Intro"
 #~ msgid "Language"
 #~ msgstr "Language"
 
-#: src/components/Footer/Footer.js:10
+#: src/components/Footer/Footer.tsx:10
 msgid "Legal Notice / Privacy Policy"
 msgstr "Legal Notice / Privacy Policy"
 
-#: src/components/About/About.js:74
+#: src/components/About/About.tsx:90
 msgid "Mail"
 msgstr "Mail"
 
-#: src/components/Navbar/Navbar.js:41
-#: src/components/Projects/Projects.js:11
+#: src/components/Navbar/Navbar.tsx:42
+#: src/components/Projects/Projects.tsx:11
 msgid "Projects"
 msgstr "Projects"
 
-#: src/components/Navbar/LanguageSwitcher.js:27
+#: src/components/Navbar/LanguageSwitcher.tsx:34
 msgid "Pseudo"
 msgstr "Pseudo"
 
-#: src/components/Navbar/Navbar.js:55
+#: src/components/Navbar/Navbar.tsx:56
 msgid "Skills"
 msgstr "Skills"
