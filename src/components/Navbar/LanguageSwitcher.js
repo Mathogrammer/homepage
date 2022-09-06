@@ -1,26 +1,22 @@
 import { useRouter } from 'next/router'
-import { useCallback, useMemo } from 'react'
+import { useCallback, useMemo, useState } from 'react'
 import { t } from "@lingui/macro"
-import Box from '@mui/material/Box';
-import MenuItem from '@mui/material/MenuItem';
-import FormControl from '@mui/material/FormControl';
-import Select from '@mui/material/Select';
 import styles from './LanguageSwitcher.module.css';
-import { useThemeContext } from '../../contexts/theme';
+import { Divider } from '@mui/material';
 
 const LanguageSwitcher = () => {
-    const [{ themeName }] = useThemeContext()
-
     const router = useRouter();
+
+    const [selected, setSelected] = useState(router.locale);
 
     const languages = useMemo(() => {
         const result = {
             en: {
-                name: t`English`,
+                name: 'EN',
                 flag: 'gb'
             },
             de: {
-                name: t`German`,
+                name: 'DE',
                 flag: 'de'
             }
         }
@@ -40,54 +36,31 @@ const LanguageSwitcher = () => {
     }, [router]);
 
     return (
-        <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-            <Select
-                sx={{ 
-                    color: 'var(--clr-fg)',
-                    '& .MuiSvgIcon-root': { color: 'unset' },
-                    '&::before': {
-                        borderColor: 'var(--clr-primary)',
-                        borderBottom: '1px solid var(--clr-primary)',
-                    },
-                    '&::after': {
-                        borderColor: 'var(--clr-primary)',
-                        borderBottom: '2px solid var(--clr-primary)',
-                    }
-                }}
-                MenuProps={{ 
-                    className: themeName,
-                    sx: {
-                        '& .MuiPaper-root': { 
-                            borderRadius: 0, 
-                            backgroundColor: 'var(--clr-bg-alt)',
-                            color: 'var(--clr-fg)'
-                        }, 
-                        '& .MuiList-root': { padding: 0 } 
-                    } 
-                }}
-                labelId="demo-simple-select-standard-label"
-                id="demo-simple-select-standard"
-                value={router.locale}
-                onChange={(event) => handleChange(event.target.value)}
-                label={t`Language`}
-                renderValue={(locale) =>
-                    <Box component="li" className={styles.wrapper}>
-                        {languages[locale].name}
-                        {languages[locale].flag && <span className={`fp ${languages[locale].flag} ${styles.justify}`} />}
-                    </Box>
-                }
-            >
-                {Object.keys(languages).map((locale) =>
-                    <MenuItem value={locale} key={locale} sx={{
-                        display: 'flex',
-                        justifyContent: 'space-between'
-                    }}>
-                        {languages[locale].name}
-                        {languages[locale].flag && <span className={`fp ${languages[locale].flag}`} />}
-                    </MenuItem>
-                )}
-            </Select>
-        </FormControl>
+        <ul className={styles.lang__wrapper}>
+            {
+                Object.entries(languages).map(([locale, { name, flag }]) => (
+                    <li className={styles.lang__item} key={`lang-${locale}`}>
+                        <button
+                            href=''
+                            rel='alternate'
+                            onClick={() => handleChange(locale)}
+                            onMouseOver={() => setSelected(locale)}
+                            onMouseLeave={() => setSelected(router.locale)}
+                            className={`link link--nav ${styles.lang__link} ${selected === locale && styles.lang__selected}`}
+                        >
+                            {name}
+                            {flag && <span className={`fp ${flag} ${styles.lang__flag}`} />}
+                        </button>
+                    </li>
+                )).reduce((acc, cur, index) => {
+                    if (index > 0)
+                        acc.push(<Divider key={`divider-${index}`} orientation="vertical" flexItem />);
+
+                    acc.push(cur);
+                    return acc;
+                }, [])
+            }
+        </ul>
     )
 }
 

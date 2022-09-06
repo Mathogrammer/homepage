@@ -1,12 +1,28 @@
-.justify {
-    position: absolute;
-    right: 0;
-    margin: auto 0;
-    height: fit-content;
-    top: 0;
-    bottom: 0;
+.lang__wrapper {
+    display: flex;
 }
 
-.wrapper {
-    position: relative;
+.lang__item {
+    margin: 0 0.75em;
+}
+
+.lang__flag {
+    margin-left: 0.5em;
+}
+
+.lang__link::before {
+    transition-delay: 0.1s;
+}
+
+.lang__selected {
+    color: var(--clr-primary);
+}
+
+.lang__selected::before {
+    width: 100%;
+}
+
+.lang__selected:hover::before,
+.lang__selected:focus::before {
+  width: 100%;
 }

@@ -35,12 +35,12 @@ msgid "Email me"
 msgstr ""
 
 #: src/components/Navbar/LanguageSwitcher.js:19
-msgid "English"
-msgstr ""
+#~ msgid "English"
+#~ msgstr ""
 
 #: src/components/Navbar/LanguageSwitcher.js:23
-msgid "German"
-msgstr ""
+#~ msgid "German"
+#~ msgstr ""
 
 #: src/components/About/About.js:22
 msgid "Hi, I'm<0/><1>{name}.</1>"
@@ -51,8 +51,8 @@ msgid "Intro"
 msgstr ""
 
 #: src/components/Navbar/LanguageSwitcher.js:72
-msgid "Language"
-msgstr ""
+#~ msgid "Language"
+#~ msgstr ""
 
 #: src/components/Footer/Footer.js:10
 msgid "Legal Notice / Privacy Policy"
@@ -67,7 +67,7 @@ msgstr ""
 msgid "Projects"
 msgstr ""
 
-#: src/components/Navbar/LanguageSwitcher.js:31
+#: src/components/Navbar/LanguageSwitcher.js:27
 msgid "Pseudo"
 msgstr ""
 
