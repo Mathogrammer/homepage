@@ -214,6 +214,14 @@ const skills: SkillsInfo = [
     }
 ];
 
+// TODO: Interests
+// Math-links:
+// https://de.wikipedia.org/wiki/Analysis
+// https://de.wikipedia.org/wiki/Topologie_(Mathematik)
+// https://de.wikipedia.org/wiki/Mengenlehre
+// https://de.wikipedia.org/wiki/Stochastik
+// https://de.wikipedia.org/wiki/Mathematische_Logik
+
 const contact: ContactInfo = {
     // email is optional - if left empty Contact section won't show up
     email: 'contact@amantel.de',
