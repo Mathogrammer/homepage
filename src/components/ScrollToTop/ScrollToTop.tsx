@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Fab } from '@mui/material';
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
-import styles from './ScrollToTop.module.css';
 
 const fabClass = {
     position: 'fixed',
