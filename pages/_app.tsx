@@ -61,8 +61,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                         description: t`Showcase of my CV, skills and portfolio`,
                         type: 'website',
                         images: [{
-                            url: 'www.amantel.de/profile/profilePicRounded.png',
-                            secureUrl: 'https://www.amantel.de/profile/profilePicRounded.png',
+                            url: '/profile/profilePicRounded.png',
                             type: 'image/png',
                             alt: t`Picture of Alexander Mantel's face in a circular frame.`
                         }],
