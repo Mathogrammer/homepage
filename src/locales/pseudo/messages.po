@@ -17,6 +17,11 @@ msgstr ""
 msgid "A {role}."
 msgstr ""
 
+#: pages/_app.tsx:60
+#: pages/_app.tsx:69
+msgid "Alexander Mantel's Homepage"
+msgstr ""
+
 #: src/components/About/About.tsx:19
 msgid "Avatar placeholder"
 msgstr ""
@@ -62,6 +67,10 @@ msgstr ""
 msgid "Mail"
 msgstr ""
 
+#: pages/_app.tsx:67
+msgid "Picture of Alexander Mantel's face in a circular frame."
+msgstr ""
+
 #: src/components/Navbar/Navbar.tsx:42
 #: src/components/Projects/Projects.tsx:11
 msgid "Projects"
@@ -69,6 +78,10 @@ msgstr ""
 
 #: src/components/Navbar/LanguageSwitcher.tsx:34
 msgid "Pseudo"
+msgstr ""
+
+#: pages/_app.tsx:61
+msgid "Showcase of my CV, skills and portfolio"
 msgstr ""
 
 #: src/components/Navbar/Navbar.tsx:56

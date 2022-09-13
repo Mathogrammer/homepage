@@ -10,6 +10,8 @@ import '../src/index.css';
 import 'flagpack/dist/flagpack.css';
 import { AppProps } from 'next/app';
 import { DefaultSeo } from 'next-seo';
+import { t } from '@lingui/macro';
+import { getLocaleWithTerritory } from '../src/utils';
 
 i18n.loadLocaleData({
     en: { plurals: en },
@@ -53,18 +55,18 @@ export default function MyApp({ Component, pageProps }: AppProps) {
                 <DefaultSeo
                     canonical={canonicalUrl}
                     openGraph={{
-                        url: 'https://www.amantel.de',
-                        locale: 'de-DE',
-                        title: 'Alexander Mantel\'s Homepage',
-                        description: 'Open Graph Description',
+                        url: canonicalUrl,
+                        locale: getLocaleWithTerritory(locale),
+                        title: t`Alexander Mantel's Homepage`,
+                        description: t`Showcase of my CV, skills and portfolio`,
                         type: 'website',
                         images: [{
                             url: 'www.amantel.de/profile/profilePicRounded.png',
                             secureUrl: 'https://www.amantel.de/profile/profilePicRounded.png',
                             type: 'image/png',
-                            alt: 'Picture of Alexander Mantel\'s face in a circular frame.'
+                            alt: t`Picture of Alexander Mantel's face in a circular frame.`
                         }],
-                        site_name: 'Alexander Mantel\'s Homepage'
+                        site_name: t`Alexander Mantel's Homepage`
                     }}
                 />
                 <Component {...pageProps} />
