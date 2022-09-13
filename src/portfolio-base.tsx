@@ -221,6 +221,7 @@ const skills: SkillsInfo = [
 // https://de.wikipedia.org/wiki/Mengenlehre
 // https://de.wikipedia.org/wiki/Stochastik
 // https://de.wikipedia.org/wiki/Mathematische_Logik
+// https://de.wikipedia.org/wiki/Gruppentheorie
 
 const contact: ContactInfo = {
     // email is optional - if left empty Contact section won't show up
