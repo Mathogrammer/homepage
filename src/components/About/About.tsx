@@ -16,7 +16,7 @@ const About = ({
         <div className={styles.about__header}>
             {photo && (
                 <div className={styles.about__image}>
-                    <Image width='200px' height='200px' alt={t`Avatar placeholder`} src={photo} placeholder='blur' />
+                    <Image width={200} height={200} alt={t`Avatar placeholder`} src={photo} placeholder='blur' />
                 </div>
             )}
 
