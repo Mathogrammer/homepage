@@ -5,3 +5,20 @@
   grid-template-columns: repeat(auto-fit, minmax(18em, 1fr));
   grid-gap: 2em;
 }
+
+.projects__grid p {
+  hyphens: auto;
+}
+
+.projects__section {
+  transition: transform 0.2s linear;
+  margin-block: 2em;
+}
+
+.projects__section>h3 {
+  margin-bottom: 0.5ex;
+}
+
+.projects__section:hover {
+  transform: translateY(-7px);
+}

@@ -18,7 +18,7 @@ msgid "A {role}."
 msgstr "Ein {role}."
 
 #: pages/_app.tsx:60
-#: pages/_app.tsx:69
+#: pages/_app.tsx:68
 msgid "Alexander Mantel's Homepage"
 msgstr "Alexander Mantels Homepage"
 
@@ -26,10 +26,14 @@ msgstr "Alexander Mantels Homepage"
 msgid "Avatar placeholder"
 msgstr "Avatar Platzhalter"
 
-#: src/components/Contact/Contact.tsx:10
 #: src/components/Navbar/Navbar.tsx:70
+#: src/components/Contact/Contact.tsx:10
 msgid "Contact"
 msgstr "Kontakt"
+
+#: src/components/Projects/Projects.tsx:16
+msgid "Current Project"
+msgstr "Derzeitiges Projekt"
 
 #: src/components/About/About.tsx:35
 msgid "Curriculum Vitae [DE]"
@@ -59,7 +63,7 @@ msgstr "Intro"
 #~ msgid "Language"
 #~ msgstr "Sprache"
 
-#: src/components/Footer/Footer.tsx:10
+#: src/components/Footer/Footer.tsx:9
 msgid "Legal Notice / Privacy Policy"
 msgstr "Impressum / Datenschutzerklärung"
 
@@ -67,12 +71,16 @@ msgstr "Impressum / Datenschutzerklärung"
 msgid "Mail"
 msgstr "Email"
 
-#: pages/_app.tsx:67
+#: pages/_app.tsx:66
 msgid "Picture of Alexander Mantel's face in a circular frame."
 msgstr "Bild von Alexander Mantels Gesicht in einem runden Rahmen"
 
+#: src/components/Projects/Projects.tsx:21
+msgid "Previous Projects"
+msgstr "Vorherige Projekte"
+
+#: src/components/Projects/Projects.tsx:13
 #: src/components/Navbar/Navbar.tsx:42
-#: src/components/Projects/Projects.tsx:11
 msgid "Projects"
 msgstr "Projekte"
 

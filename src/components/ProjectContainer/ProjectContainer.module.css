@@ -3,16 +3,11 @@
   margin: 0 auto;
   text-align: center;
   box-shadow: var(--shadow);
-  transition: transform 0.2s linear;
   background-color: var(--clr-bg-alt);
 }
 
-.project > h3 {
+.project>h3 {
   white-space: pre-wrap;
-}
-
-.project:hover {
-  transform: translateY(-7px);
 }
 
 .project__description {

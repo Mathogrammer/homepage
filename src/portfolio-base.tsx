@@ -14,7 +14,7 @@ const about: AboutInfo = {
     resume: 'https://www.amantel.de/cv.pdf',
     social: {
         github: 'https://github.com/Mathogrammer',
-        xing: 'https://www.xing.com/profile/AlexanderMarc_Mantel/',
+        linkedin: 'www.linkedin.com/in/alexander-marc-mantel-78584a235',
         mail: 'mailto:contact@amantel.de'
     },
 };
@@ -23,15 +23,21 @@ const projects: ProjectsInfo = [
     // projects can be added an removed
     // if there are no projects, Projects section won't show up
     {
+        name: 'Fakultät 73',
+        description: '',
+        stack: ['reactjs', 'typescript', 'java', 'spring-boot', 'docker', 'postgresql', 'azure'],
+        livePreview: 'https://www.volkswagen-karriere.de/de/einstiegsmoeglichkeiten/absolventen/fakultaet-73.html'
+    },
+    {
         name: 'SmARtorials',
         description: '',
-        stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'kubernetes'],
+        stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'docker', 'kubernetes'],
         livePreview: 'https://smartorials.de',
     },
     {
         name: `Pflegebrille 2.0\n(Care Lenses)`,
         description: '',
-        stack: ['android', 'reactjs', 'kotlin', 'java', 'nodejs', 'kubernetes', 'webrtc', 'opencv'],
+        stack: ['android', 'reactjs', 'kotlin', 'java', 'docker', 'kubernetes', 'webrtc', 'opencv'],
         livePreview: 'https://pflegebrille.de',
     },
     // {
@@ -86,6 +92,11 @@ const skills: SkillsInfo = [
                 icon: 'css3-plain-wordmark',
             },
             {
+                name: 'PostgreSQL',
+                icon: 'postgresql-plain',
+                href: 'www.postgresql.org',
+            },
+            {
                 name: 'Python',
                 icon: 'python-plain',
                 href: 'www.python.org',
@@ -104,14 +115,8 @@ const skills: SkillsInfo = [
                 name: 'C/C++',
                 icon: 'cplusplus-plain',
                 href: 'www.cplusplus.com'
-            }
-            ,
-            'XML, JSON, YAML',
-            {
-                name: 'SQLite',
-                icon: 'sqlite-plain',
-                href: 'www.sqlite.com',
             },
+            'XML, JSON, YAML',
         ]
     },
     {
@@ -168,12 +173,23 @@ const skills: SkillsInfo = [
         ]
     },
     {
+        category: 'Agile Methods',
+        items: [
+            'Kanban',
+        ]
+    },
+    {
         category: 'Tools & Operating Systems',
         items: [
             {
                 name: 'Windows',
                 icon: 'windows8-plain',
                 href: 'www.windows.com',
+            },
+            {
+                name: 'Mac',
+                icon: 'apple-plain',
+                href: 'https://www.apple.com/mac/',
             },
             {
                 name: 'Linux',

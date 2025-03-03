@@ -10,10 +10,8 @@ const NoticePage = () => (
             <meta name='viewport' content='width=device-width, initial-scale=1' />
             <meta name='robots' content='noindex' />
         </Head>
-        <Link href='/'>
-            <a className='link'>
-                Go back to Homepage
-            </a>
+        <Link className='link' href='/'>
+            Go back to Homepage
         </Link>
         <h1>Legal Disclosure</h1>
         <br />
