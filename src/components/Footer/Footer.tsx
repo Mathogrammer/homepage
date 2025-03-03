@@ -4,13 +4,11 @@ import { Trans } from "@lingui/macro";
 
 const Footer = () => (
     <footer className={styles.footer}>
-        © 2022 Alexander Marc Mantel -&nbsp;
-        <Link href='/legalnotice-privacy'>
-            <a className={`link ${styles.footer__link}`}>
-                <Trans>
-                    Legal Notice / Privacy Policy
-                </Trans>
-            </a>
+        © 2025 Alexander Marc Mantel -&nbsp;
+        <Link className={`link ${styles.footer__link}`} href='/legalnotice-privacy'>
+            <Trans>
+                Legal Notice / Privacy Policy
+            </Trans>
         </Link>
     </footer>
 );
