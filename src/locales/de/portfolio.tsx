@@ -76,6 +76,7 @@ portfolioBase.skills[0].category = 'Softwarearchitekturen';
 portfolioBase.skills[1].category = 'Programmiersprachen';
 portfolioBase.skills[2].category = 'Platform Entwicklung & Administration';
 portfolioBase.skills[3].category = 'Frameworks & Bibliotheken';
-portfolioBase.skills[4].category = 'Tools & Betriebssysteme';
+portfolioBase.skills[4].category = 'Agile Methoden';
+portfolioBase.skills[5].category = 'Tools & Betriebssysteme';
 
 export const portfolio: Portfolio = portfolioBase;
