@@ -15,15 +15,15 @@ const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
                         {items.map((skill, itemIndex) => {
                             if (typeof skill !== 'string' && skill.href) {
                                 return (
-                                    <li
-                                        key={`skill-item-${itemIndex}`}
-                                        className={`${styles.skills__list_item} btn btn--plain`}
-                                    >
-                                        <a href={`https://${skill.href}`}>
+                                    <a key={`skill-item-${itemIndex}`} href={`https://${skill.href}`}>
+                                        <li
+
+                                            className={`${styles.skills__list_item} btn btn--plain`}
+                                        >
                                             {!!skill.icon && <i className={`devicon-${skill.icon}`} />}
                                             {skill.name}
-                                        </a>
-                                    </li>
+                                        </li>
+                                    </a>
                                 );
                             }
                             return (
