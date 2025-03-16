@@ -217,6 +217,11 @@ const skills: SkillsInfo = [
                 name: 'Rider',
                 icon: 'jetbrains-plain',
                 href: 'www.jetbrains.com/rider',
+            },
+            {
+                name: 'Docusaurus',
+                customIcon: 'docusaurus',
+                href: 'www.docusaurus.io',
             }
         ]
     }
