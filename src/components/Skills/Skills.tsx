@@ -3,10 +3,6 @@ import styles from './Skills.module.css';
 
 const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
 
-    // const skillCategories = useMemo(() => {
-    //     skills.map
-    // }, [skills]);
-
     if (!skills) return null;
 
     return (

@@ -40,14 +40,6 @@ const projects: ProjectsInfo = [
         stack: ['android', 'reactjs', 'kotlin', 'java', 'docker', 'kubernetes', 'webrtc', 'opencv'],
         livePreview: 'https://pflegebrille.de',
     },
-    // {
-    // name: 'Smart Fooding',
-    // description:
-    //   'TODO',
-    // stack: ['html-css-javascript', 'sequelize', 'React'],
-    // sourceCode: 'https://github.com',
-    // livePreview: 'https://github.com',
-    // },
 ];
 
 const skills: SkillsInfo = [
