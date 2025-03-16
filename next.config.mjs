@@ -1,6 +1,6 @@
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
+import { PHASE_DEVELOPMENT_SERVER } from "next/constants.js";
 
-module.exports = (phase) => ({
+const config = (phase) => ({
     reactStrictMode: true,
     i18n: {
         // These are all the locales you want to support in
@@ -15,4 +15,6 @@ module.exports = (phase) => ({
             fallback: [{ source: "/:path*", destination: "/_404/:path*" }],
         };
     },
-})
+});
+
+export default config;
