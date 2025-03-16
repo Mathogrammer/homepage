@@ -11,7 +11,8 @@
   margin: 0.5em;
 }
 
-.skills__list_item i {
+.skills__list_item i,
+.skills__list_item svg {
   margin: 0 0.2em;
   color: var(--clr-primary);
 }
@@ -19,4 +20,10 @@
 .skills__category__title {
   text-align: center;
   margin-top: 1em;
+}
+
+.skills__list_item__custom_icon {
+  color: var(--clr-primary);
+  line-height: 1;
+  height: 1lh;
 }

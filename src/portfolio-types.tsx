@@ -1,3 +1,5 @@
+import { iconTypes } from "./components/CustomIcon/CustomIcon";
+
 type HeaderInfo = {
     homepage?: string;
     title?: string;
@@ -30,6 +32,7 @@ type SkillsInfo = Array<{
     items: Array<string | {
         name: string;
         icon?: string;
+        customIcon?: keyof typeof iconTypes;
         href?: string;
     }>
 }>

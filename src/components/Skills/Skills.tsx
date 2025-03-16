@@ -1,4 +1,5 @@
 import { Portfolio } from '../../portfolio-types';
+import { CustomIcon } from '../CustomIcon/CustomIcon';
 import styles from './Skills.module.css';
 
 const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
@@ -16,11 +17,15 @@ const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
                             if (typeof skill !== 'string' && skill.href) {
                                 return (
                                     <a key={`skill-item-${itemIndex}`} href={`https://${skill.href}`}>
-                                        <li
-
-                                            className={`${styles.skills__list_item} btn btn--plain`}
-                                        >
+                                        <li className={`${styles.skills__list_item} btn btn--plain`}>
                                             {!!skill.icon && <i className={`devicon-${skill.icon}`} />}
+                                            {!!skill.customIcon && (
+                                                <CustomIcon
+                                                    name={skill.customIcon}
+                                                    className={styles.skills__list_item__custom_icon}
+                                                    aria-hidden='true'
+                                                />
+                                            )}
                                             {skill.name}
                                         </li>
                                     </a>
@@ -32,6 +37,11 @@ const Skills = ({ skills }: Pick<Portfolio, 'skills'>) => {
                                     className={`${styles.skills__list_item} btn btn--plain`}
                                 >
                                     {!!(typeof skill !== 'string' && skill.icon) && <i className={`devicon-${skill.icon}`} />}
+                                    {!!(typeof skill !== 'string' && skill.customIcon) && (
+                                        <CustomIcon name={skill.customIcon}
+                                            className={styles.skills__list_item__custom_icon}
+                                        />
+                                    )}
                                     {typeof skill === 'string' ? skill : skill.name}
                                 </li>
                             );
