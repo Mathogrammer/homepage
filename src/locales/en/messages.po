@@ -26,8 +26,8 @@ msgstr "Alexander Mantel's Homepage"
 msgid "Avatar placeholder"
 msgstr "Avatar placeholder"
 
-#: src/components/Navbar/Navbar.tsx:70
 #: src/components/Contact/Contact.tsx:10
+#: src/components/Navbar/Navbar.tsx:70
 msgid "Contact"
 msgstr "Contact"
 
@@ -79,8 +79,8 @@ msgstr "Picture of Alexander Mantel's face in a circular frame."
 msgid "Previous Projects"
 msgstr "Previous Projects"
 
-#: src/components/Projects/Projects.tsx:13
 #: src/components/Navbar/Navbar.tsx:42
+#: src/components/Projects/Projects.tsx:13
 msgid "Projects"
 msgstr "Projects"
 
