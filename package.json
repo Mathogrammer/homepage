@@ -5,7 +5,7 @@
   "homepage": "https://www.amantel.de",
   "packageManager": "pnpm@11.22.0",
   "engines": {
-    "node": ">=24.19"
+    "node": "^24.19"
   },
   "scripts": {
     "dev": "lingui compile --typescript && next dev",
