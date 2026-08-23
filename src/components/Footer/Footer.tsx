@@ -4,7 +4,7 @@ import { Trans } from "@lingui/react/macro";
 
 const Footer = () => (
     <footer className={styles.footer}>
-        © 2025 Alexander Marc Mantel -&nbsp;
+        © 2026 Alexander Marc Mantel -&nbsp;
         <Link className={`link ${styles.footer__link}`} href='/legalnotice-privacy'>
             <Trans>
                 Legal Notice / Privacy Policy
