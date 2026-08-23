@@ -21,7 +21,7 @@ type AboutInfo = {
 type ProjectsInfo = Array<{
     name: string;
     // To allow JSX we have to modify pages/index.tsx to serialise it to static markup
-    description: string | JSX.Element;
+    description: string | React.JSX.Element;
     stack?: string[];
     sourceCode?: string;
     livePreview?: string;

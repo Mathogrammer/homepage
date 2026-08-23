@@ -15,32 +15,20 @@ const config = (phase) => ({
             fallback: [{ source: "/:path*", destination: "/_404/:path*" }],
         };
     },
-    webpack(config) {
-        // Grab the existing rule that handles SVG imports
-        const fileLoaderRule = config.module.rules.find((rule) =>
-            rule.test?.test?.('.svg'),
-        );
-
-        config.module.rules.push(
-            // Reapply the existing rule, but only for svg imports ending in ?url
-            {
-                ...fileLoaderRule,
-                test: /\.svg$/i,
-                resourceQuery: /url/, // *.svg?url
+    turbopack: {
+        rules: {
+            // Import *.svg as React components. Replaces the previous
+            // webpack()/@svgr/webpack setup; Turbopack runs the same loader.
+            '*.svg': {
+                condition: { not: 'foreign' }, // skip node_modules
+                loaders: ['@svgr/webpack'],
+                as: '*.js',
             },
-            // Convert all other *.svg imports to React components
-            {
-                test: /\.svg$/i,
-                issuer: fileLoaderRule.issuer,
-                resourceQuery: { not: [...fileLoaderRule.resourceQuery.not, /url/] }, // exclude if *.svg?url
-                use: ['@svgr/webpack'],
-            },
-        );
-
-        // Modify the file loader rule to ignore *.svg, since we have it handled now.
-        fileLoaderRule.exclude = /\.svg$/i;
-
-        return config;
+        },
+    },
+    experimental: {
+        // Transforms @lingui/*/macro at build time, replacing babel-plugin-macros.
+        swcPlugins: [['@lingui/swc-plugin', {}]],
     },
 });
 

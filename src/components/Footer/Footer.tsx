@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import styles from './Footer.module.css';
-import { Trans } from "@lingui/macro";
+import { Trans } from "@lingui/react/macro";
 
 const Footer = () => (
     <footer className={styles.footer}>

@@ -1,4 +1,4 @@
-import { Trans } from '@lingui/macro';
+import { Trans } from '@lingui/react/macro';
 import { StaticProps } from '../../../pages';
 import ProjectContainer from '../ProjectContainer/ProjectContainer';
 import styles from './Projects.module.css';

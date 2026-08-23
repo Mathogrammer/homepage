@@ -55,13 +55,17 @@ const App = ({ header, about, projects, skills, contact }: StaticProps['props'])
         </div>
     );
 };
+// Catalogs are compiled ahead of time by `lingui compile` (chained into the
+// dev/build scripts), so the same import path works in every environment.
+const catalogs: Record<string, () => Promise<{ messages: Messages }>> = {
+    en: () => import('../src/locales/en/messages'),
+    de: () => import('../src/locales/de/messages'),
+    pseudo: () => import('../src/locales/pseudo/messages'),
+};
+
 export const getStaticProps: GetStaticProps = async (context) => {
-    const locale = context.locale;
-    let data: { messages: Messages };
-    if (process.env.NODE_ENV === 'production')
-        data = await import(`../src/locales/${locale}/messages`);
-    else
-        data = await import(`@lingui/loader!../src/locales/${locale}/messages.po`);
+    const locale = context.locale ?? 'de';
+    const data = await (catalogs[locale] ?? catalogs.de)();
 
     const portfolioLocale = locale === 'pseudo' ? 'en' : locale;
     const portfolio: Portfolio = await import(`../src/locales/${portfolioLocale}/portfolio`).then(module => module.portfolio);

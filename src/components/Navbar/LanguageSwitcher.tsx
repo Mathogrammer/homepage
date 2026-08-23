@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useCallback, useMemo, useState } from 'react';
-import { t } from "@lingui/macro";
+import { t } from "@lingui/core/macro";
 import styles from './LanguageSwitcher.module.css';
 import { Divider } from '@mui/material';
 

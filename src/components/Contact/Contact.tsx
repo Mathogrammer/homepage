@@ -1,5 +1,5 @@
 import styles from './Contact.module.css';
-import { Trans } from "@lingui/macro";
+import { Trans } from "@lingui/react/macro";
 import { Portfolio } from '../../portfolio-types';
 
 const Contact = ({ contact }: Pick<Portfolio, 'contact'>) => {

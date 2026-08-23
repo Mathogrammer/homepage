@@ -1,5 +1,6 @@
-import { createContext, useEffect, useState, useContext, useMemo } from 'react';
-import PropTypes from 'prop-types';
+import { createContext, useState, useContext, useMemo, useSyncExternalStore } from 'react';
+
+type ThemeName = 'light' | 'dark';
 
 type Context = [{
     themeName: string;
@@ -7,7 +8,7 @@ type Context = [{
     isLightTheme: boolean;
 }]
 
-const defaultContext: Context = [{ 
+const defaultContext: Context = [{
     themeName: 'light',
     toggleTheme: undefined,
     isLightTheme: true,
@@ -15,36 +16,52 @@ const defaultContext: Context = [{
 
 const ThemeContext = createContext(defaultContext);
 
-const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-    const [themeName, setThemeName] = useState('light');
+const DARK_QUERY = '(prefers-color-scheme: dark)';
 
-    useEffect(() => {
-        const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
-        setThemeName(darkMediaQuery.matches ? 'dark' : 'light');
-        darkMediaQuery.addEventListener('change', (e) => {
-            setThemeName(e.matches ? 'dark' : 'light');
-        });
-    }, []);
+const subscribeToSystemTheme = (onStoreChange: () => void) => {
+    const mediaQuery = window.matchMedia(DARK_QUERY);
+    mediaQuery.addEventListener('change', onStoreChange);
+    return () => mediaQuery.removeEventListener('change', onStoreChange);
+};
+
+const getSystemTheme = (): ThemeName =>
+    window.matchMedia(DARK_QUERY).matches ? 'dark' : 'light';
+
+// The server has no media query to read; match the pre-hydration default.
+const getServerTheme = (): ThemeName => 'light';
+
+const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
+    const systemTheme = useSyncExternalStore(
+        subscribeToSystemTheme,
+        getSystemTheme,
+        getServerTheme,
+    );
+    // An explicit toggle overrides the system preference until reload.
+    const [override, setOverride] = useState<ThemeName | null>(null);
+
+    const themeName = override ?? systemTheme;
 
     const isLightTheme = useMemo(() => {
         return themeName !== 'dark';
     }, [themeName]);
 
     const toggleTheme = () => {
-        const name = themeName === 'dark' ? 'light' : 'dark';
+        const name: ThemeName = themeName === 'dark' ? 'light' : 'dark';
         localStorage.setItem('themeName', name);
-        setThemeName(name);
+        setOverride(name);
     };
 
+    const value: Context = useMemo(
+        () => [{ themeName, toggleTheme, isLightTheme }],
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+        [themeName, isLightTheme],
+    );
+
     return (
-        <ThemeContext.Provider value={[{ themeName, toggleTheme, isLightTheme }]}>
+        <ThemeContext.Provider value={value}>
             {children}
         </ThemeContext.Provider>
     );
-};
-
-ThemeProvider.propTypes = {
-    children: PropTypes.node.isRequired,
 };
 
 const useThemeContext = () => useContext(ThemeContext);
