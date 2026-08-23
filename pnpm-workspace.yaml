@@ -1,8 +1,10 @@
-# Pin the Node used to run scripts. @lingui/cli 6 requires >=22.19 (it guards its
-# entry point with import.meta.main); pnpm downloads this version on demand so it
-# does not depend on whatever Node happens to be installed globally.
-useNodeVersion: 24.19.0
+# pnpm <=10 reads this file as a workspace (monorepo) definition and errors with
+# "packages field missing or empty" unless `packages` is present. pnpm 11 reads it
+# as the general settings file. An explicit empty list satisfies both, which matters
+# because Vercel currently pins pnpm 9.x for this project.
+packages: []
 
 # Native binary for eslint-import-resolver-typescript (via eslint-config-next).
+# Only pnpm 10+ gates build scripts; pnpm 9 runs them unconditionally.
 allowBuilds:
   unrs-resolver: true
